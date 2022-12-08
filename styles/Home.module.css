@@ -127,3 +127,8 @@
     filter: invert(1);
   }
 }
+
+#loading-overlay {
+  position: absolute;
+  color: #0070f3;
+}
