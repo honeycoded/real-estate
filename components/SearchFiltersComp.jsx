@@ -17,19 +17,13 @@ import {
 } from "@chakra-ui/react";
 import RangeSliderComponent from "./RangeSliderComponent";
 import { useRouter } from "next/router";
-import MapPicker from "react-google-map-picker";
 
 const SearchFiltersComp = () => {
   const [value, setValue] = useState("for-rent");
   const [priceRange, setPriceRange] = useState(0);
   const [roomsRange, setRoomsRange] = useState(0);
   const [bathsRange, setBathsRange] = useState(0);
-  const [areaRange, setAreaRange] = useState(0);
-  const [defaultLocation, setDefaultLocation] = useState({
-    lat: 24.44365703814196,
-    long: 54.648528636879874,
-  });
-  const [location, setLocation] = useState(defaultLocation);
+  const [areaRange, setAreaRange] = useState(0);  
   const [zoom, setZoom] = useState(10);
 
   const router = useRouter();
@@ -41,17 +35,8 @@ const SearchFiltersComp = () => {
     router.push({ pathname: path, query: query });
   };
 
-  const reset = () => {
-    setDefaultLocation({
-      lat: 24.44365703814196,
-      long: 54.648528636879874,
-    });
-    setZoom(10);
-  };
 
-  const handleLocationChange = (lat, long) => {
-    setLocation({ lat: lat, long: long });
-  };
+
 
   return (
     <Box
@@ -137,14 +122,6 @@ const SearchFiltersComp = () => {
           label={`${areaRange} sqft`}
         />
       </Flex>
-      <MapPicker
-        defaultLocation={defaultLocation}
-        zoom={zoom}
-        style={{ height: "300px", width: "300px", marginTop: "1rem" }}
-        mapTypeId="roadmap"
-        onChangeLocation={handleLocationChange}
-        apiKey="AIzaSyD07E1VvpsN_0FvsmKAj4nK9GnLq-9jtj8"
-      />
       <Flex justifyContent={"flex-end"} mt={"2rem"}>
         <Select
           placeholder="Sort"

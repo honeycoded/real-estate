@@ -11,7 +11,7 @@ import "../../css/uikit.css";
 import "../../css/uikit.min.css";
 import "../../css/uikit-rtl.css";
 import "../../css/uikit-rtl.min.css";
-import { Triangles } from "react-loader-spinner";
+import { Bars } from "react-loader-spinner";
 const breakpoints = {
   sm: "320px",
   md: "768px",
@@ -42,7 +42,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       {loading ? (
-        <Triangles />
+        <Bars />
       ) : (
         <ChakraProvider theme={theme}>
           <Layout>
