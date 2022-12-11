@@ -42,7 +42,9 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       {loading ? (
+        <div style={{display:'flex', justifyContent:'center', alignItems:'center', height:'100vh'}}>
         <Bars />
+        </div>
       ) : (
         <ChakraProvider theme={theme}>
           <Layout>
