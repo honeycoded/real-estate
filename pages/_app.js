@@ -7,10 +7,6 @@ import { extendTheme } from "@chakra-ui/react";
 import "../styles/globals.css";
 import { useState, useEffect } from "react";
 import "@fontsource/bubblegum-sans";
-import "../../css/uikit.css";
-import "../../css/uikit.min.css";
-import "../../css/uikit-rtl.css";
-import "../../css/uikit-rtl.min.css";
 import { Bars } from "react-loader-spinner";
 const breakpoints = {
   sm: "320px",
