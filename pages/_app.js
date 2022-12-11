@@ -11,6 +11,7 @@ import "../../css/uikit.css";
 import "../../css/uikit.min.css";
 import "../../css/uikit-rtl.css";
 import "../../css/uikit-rtl.min.css";
+import { Triangles } from "react-loader-spinner";
 const breakpoints = {
   sm: "320px",
   md: "768px",
@@ -24,11 +25,9 @@ function MyApp({ Component, pageProps }) {
   const [loading, setLoading] = useState(false);
   useEffect(() => {
     const start = () => {
-      console.log("start");
       setLoading(true);
     };
     const end = () => {
-      console.log("finished");
       setLoading(false);
     };
     Router.events.on("routeChangeStart", start);
@@ -43,7 +42,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       {loading ? (
-        <h1>Loading...</h1>
+        <Triangles />
       ) : (
         <ChakraProvider theme={theme}>
           <Layout>

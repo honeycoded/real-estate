@@ -11,13 +11,13 @@ const Property = ({ details }) => {
   return (
     <Box>
       <Flex>
-        <Image src={details.coverPhoto.url} width={352} height={197} />
+        <Image src={details.coverPhoto.url} width={352} height={197} alt={details.furnishingStatus}  />
         <Flex flexDirection={"column"} alignItems="center">
           <Flex flexDirection="column" alignItems={"center"}>
             <Text>{details.title}</Text>
             <Flex>
               {details.location.map((loc) => (
-                <Text>{loc.name}&nbsp;</Text>
+                <Text key={details.ObjectID}>{loc.name}&nbsp;</Text>
               ))}
             </Flex>
           </Flex>
